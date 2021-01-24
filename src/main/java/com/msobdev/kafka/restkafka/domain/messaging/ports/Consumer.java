@@ -1,7 +1,7 @@
 package com.msobdev.kafka.restkafka.domain.messaging.ports;
 
-import java.io.IOException;
+import com.msobdev.kafka.restkafka.domain.messaging.model.User;
 
 public interface Consumer {
-    void consume(String message) throws IOException;
+    void consume(User user);
 }

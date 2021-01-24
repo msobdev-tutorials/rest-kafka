@@ -1,5 +1,6 @@
 package com.msobdev.kafka.restkafka.application.rest;
 
+import com.msobdev.kafka.restkafka.domain.messaging.model.User;
 import com.msobdev.kafka.restkafka.domain.messaging.ports.Producer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,6 @@ public class KafkaController {
 
     @PostMapping(value = "/publish")
     public void sendMessageToKafkaTopic(@RequestParam("message") String message) {
-        producer.sendMessage(message);
+        producer.sendMessage(new User(message, 123));
     }
 }
